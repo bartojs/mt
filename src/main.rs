@@ -13,14 +13,14 @@ fn main() {
             let m = d.modified().unwrap();
             let s = m.elapsed().unwrap().as_secs();
             if s < 60 {
-                println!("{} ({}) {}secs", f.display(), arg, s);
+                println!("{} {}secs", arg, s);
             } else if s < 60*60 {
-                println!("{} ({}) {}mins", f.display(), arg, s/60);
+                println!("{} {}mins", arg, s/60);
             } else if s < 60*60*60 {
-                println!("{} ({}) {}hrs", f.display(), arg, s/(60*60));
+                println!("{} {}hrs", arg, s/(60*60));
             } else {
                 let dt: DateTime<Local> = m.into();
-                println!("{} ({}) {}", f.display(), arg, dt.format("%F|%T"));
+                println!("{} {}", arg, dt.format("%F|%T"));
             }
         } else {
             println!("{} - no file", arg);
